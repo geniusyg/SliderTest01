@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *la;
 
 @end
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)progressChanged:(id)sender {
+	UISlider *slider = (UISlider *)sender;
+	_la.text = [NSString stringWithFormat:@"%f", slider.value];
 }
 
 - (void)didReceiveMemoryWarning
